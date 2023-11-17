@@ -20,11 +20,17 @@ This page explores a dataset obtained from food.com, presenting the information 
 **Observation:** There is about a 12 minutes difference between the prepation times of healthy food and non-healhty food
 
 **Null Hypothesis (h0):** There is no significant difference in the mean preparation time between recipes with the healthy tag and recipes without the healthy tag.
+
 **Alternate Hypothesis (h1):** There is a significant difference in the mean preparation time between recipes with the healthy tag and recipes without the healthy tag.
+
 **Test Statistic:** The mean absolute difference in healthy preparation times and non healhty preparation times 
+
 **Significance Level:** We will be running this permutation test at the 0.05 significance level.
+
 **P-value:** 0.733
+
 **Histogram:**
+
 **Conclusion:** Since our P-Value (0.733) >= our significance level(0.05), we fail to reject the null and conclude that there is not enough evidence to suggest a significant difference in the mean 'minutes' between healthy and non-healthy groups based on the permutation test. The observed difference in means may be attributed to random sampling variability, and the results should be interpreted with caution.
 
 
