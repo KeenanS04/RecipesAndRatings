@@ -44,6 +44,32 @@ To create our final dataset that will be used for our analysis, we performed mul
 1. Merged the recipes with the reviews, using the `recipe_id` as our key to merge on.
 2. Replaced each 0 in the `rating` column with `np.nan` to account for missing ratings in reviews.
 3. Created a new column, `avg_rating` that stores the average rating among reviews from each recipe.
+4. Converted `date` column to datetime objects
+5. Converted list-like strings to actual lists (`tags`, `nutrition`, `steps`, `ingredients`)
+6. Drop rows with too much missing data
+
+1. **Converting Object to List**: Our initial step involves addressing the `tags`, `steps`, `nutrition`, and `ingredients` columns in the dataframe. Although these columns appear to be lists, closer inspection reveals that they are not true lists. To fix this, we implement a function to convert these three columns into lists of their respective datatypes.
+
+2. **Converting 'Submitted' Column into Datetime**: The `submitted` column in the dataframe is currently represented as an object. To increase ease-of-use, we convert it into a datetime data type.
+
+3. **Merging Two Dataframes**: Given that both dataframes share common columns, namely 'id' and 'recipe_id', we merge the two dataframes to present a comprehensive view of recipes alongside their corresponding ratings and reviews.
+
+4. **Adding Average Rating Column**: Following the merge, we identify the crucial data point of recipe ratings. To enhance our analysis, we introduce a new column named 'avg_rating', containing the average rating for each recipe. Additionally, we acknowledge that a rating of 0 may signify an empty field where users did not provide a rating. Consequently, we replace these 0 values with 'nan' for more accurate representation.
+
+5. **Added NaN Values**: Replaced all 0 ratings with `np.nan` to account for missing ratings. It is impossible to give a rating of 0, so to account for this we use `np.nan`.
+
+6. **Drop unnecessary columns**: Because will not use all columns, we drop most of them to improve readability of our dataframe.
+
+After our data cleaning, our dataframe looks like this:
+
+|    | name                                 |     id |   minutes | tags                                                                                                                                                                                                                        | nutrition                                    |   n_steps |   n_ingredients |   rating |   avg_rating |
+|----|--------------------------------------|--------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|-----------|-----------------|----------|--------------|
+|  0 | 1 brownies in the world    best ever | 333281 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'for-large-groups', 'desserts', 'lunch', 'snacks', 'cookies-and-brownies', 'chocolate', 'bar-cookies', 'brownies', 'number-of-servings'] | [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0]     |        10 |               9 |        4 |            4 |
+|  1 | 1 in canada chocolate chip cookies   | 453467 |        45 | ['60-minutes-or-less', 'time-to-make', 'cuisine', 'preparation', 'north-american', 'for-large-groups', 'canadian', 'british-columbian', 'number-of-servings']                                                               | [595.1, 46.0, 211.0, 22.0, 13.0, 51.0, 26.0] |        12 |              11 |        5 |            5 |
+|  2 | 412 broccoli casserole               | 306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]    |         6 |               9 |        5 |            5 |
+|  3 | 412 broccoli casserole               | 306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]    |         6 |               9 |        5 |            5 |
+|  4 | 412 broccoli casserole               | 306168 |        40 | ['60-minutes-or-less', 'time-to-make', 'course', 'main-ingredient', 'preparation', 'side-dishes', 'vegetables', 'easy', 'beginner-cook', 'broccoli']                                                                        | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]    |         6 |               9 |        5 |            5 |
+
 
 ### Univariate Analysis
 <iframe src="assets/healthy-nonhealthy-pie.html" width=800 height=600 frameBorder=0></iframe>
@@ -53,7 +79,7 @@ This pie chart shows the distribution of healthy and non healthy recipes in our 
 <iframe src="assets/prep-time-healthy-1.html" width=800 height=600 frameBorder=0></iframe>
 
 This histogram shows the how the preparation time of each healthy and non-healthy recipe stacks up with each other. In this plot you can't see a trend because of the outliers.
-
+7
 Getting rid of outliers, we get this histogram.
 <iframe src="assets/prep-time-healthy-2.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -147,26 +173,3 @@ After performing a permutation test, shuffling the `ratings` column 1000 times a
 <iframe src="assets/perm_test_H.html" width=800 height=600 frameBorder=0></iframe>
 
 **Conclusion:** Since our P-Value (0.733) >= our significance level(0.05), we fail to reject the null and conclude that there is not enough evidence to suggest a significant difference in the mean 'minutes' between healthy and non-healthy groups based on the permutation test. The observed difference in means may be attributed to random sampling variability, and the results should be interpreted with caution.
-
-
-
-
-## The Data
-
-Let's take a look at our data, which contains both recipes as well as reviews. 
-
-## Visuals
-<iframe src="assets/cals-mins-scatter.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/cooking-time-hist-1.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/cooking-time-hist-2.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/healthy-nonhealthy-pie.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/hyp-testing-hist.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/mins-ratings-scatter.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/prep-time-healthy-1.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/prep-time-healthy-2.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/recipe-length-missingness-1.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/recipe-length-missingness-2.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/recipe-length-missingness-3.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/scatter_cals.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/recipe-length-missingness-3.html" width=800 height=600 frameBorder=0></iframe>
-<iframe src="assets/perm_test_H.html" width=800 height=600 frameBorder=0></iframe>
