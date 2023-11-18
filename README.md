@@ -48,7 +48,7 @@ To create our final dataset that will be used for our analysis, we performed mul
 ### Univariate Analysis
 <iframe src="assets/healthy-nonhealthy-pie.html" width=800 height=600 frameBorder=0></iframe>
 
-This pie chart shows the distribution of healthy and non healthy recipes in our dataset. As you can see there is much greater percentage of non-healhty recipes over healhty recipes. 
+This pie chart shows the distribution of healthy and non healthy recipes in our dataset. As you can see there is much greater percentage of non-healthy recipes over healthy recipes. 
 
 ### Bivariate Analysis
 <iframe src="assets/prep-time-healthy-1.html" width=800 height=600 frameBorder=0></iframe>
@@ -130,7 +130,7 @@ After performing a permutation test, shuffling the `ratings` column 1000 times a
 
 **Alternate Hypothesis (h1):** There is a significant difference in the mean preparation time between recipes with the healthy tag and recipes without the healthy tag.
 
-**Test Statistic:** The mean absolute difference in healthy preparation times and non healhty preparation times 
+**Test Statistic:** The mean absolute difference in healthy preparation times and non healthy preparation times 
 
 **Significance Level:** We will be running this permutation test at the 0.05 significance level.
 
