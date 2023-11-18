@@ -46,7 +46,7 @@ To create our final dataset that will be used for our analysis, we performed mul
 3. Created a new column, `avg_rating` that stores the average rating among reviews from each recipe.
 
 ### Univariate Analysis
-<iframe src="assets/healthy-nonhealthy-pie.html" style="width: 100%; height: 60vh; border: 0;"></iframe>
+<iframe src="assets/healthy-nonhealthy-pie.html" width=800 height=600 frameBorder=0></iframe>
 
 This pie chart shows the distribution of healthy and non healthy recipes in our dataset. As you can see there is much greater percentage of non-healhty recipes over healhty recipes. 
 
