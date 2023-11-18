@@ -49,6 +49,7 @@ To create our final dataset that will be used for our analysis, we performed mul
 <iframe src="assets/healthy-nonhealthy-pie.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Bivariate Analysis
+<iframe src="assets/prep-time-healthy-1.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/prep-time-healthy-2.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Interesting Aggregates
