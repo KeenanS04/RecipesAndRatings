@@ -33,9 +33,18 @@ The second part of our dataset consists of 731927 reviews for the recipes given 
 | `'rating'`   | Rating given      |
 | `'review'`   | Review text       |
 
+In our analysis, we mainly used data from the `rating`, `minutes`, `tags` and `nutrition` column to determine differences between aspects of healthy and non-healthy foods. 
+
 # Cleaning and EDA
 
 ### Data Cleaning
+
+To create our final dataset that will be used for our analysis, we performed multiple operations on our data. 
+
+1. Merged the recipes with the reviews, using the `recipe_id` as our key to merge on.
+2. Replaced each 0 in the `rating` column with `np.nan` to account for missing ratings in reviews.
+3. Created a new column, `avg_rating` that stores the average rating among reviews from each recipe.
+
 ### Univariate Analysis
 <iframe src="assets/healthy-nonhealthy-pie.html" width=800 height=600 frameBorder=0></iframe>
 
