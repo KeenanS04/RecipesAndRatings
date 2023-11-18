@@ -50,7 +50,6 @@ To create our final dataset that will be used for our analysis, we performed mul
 
 This pie chart shows the distribution of healthy and non healthy recipes in our dataset. As you can see there is much greater percentage of non-healthy recipes over healthy recipes. 
 
-### Bivariate Analysis
 <iframe src="assets/prep-time-healthy-1.html" width=800 height=600 frameBorder=0></iframe>
 
 This histogram shows the how the preparation time of each healthy and non-healthy recipe stacks up with each other. In this plot you can't see a trend because of the outliers.
@@ -59,6 +58,14 @@ Getting rid of outliers, we get this histogram.
 <iframe src="assets/prep-time-healthy-2.html" width=800 height=600 frameBorder=0></iframe>
 
 This histogram clearly shows a similar distribution between the preperation time of healthy and non-healthy foods. There are also some recipes from both groups that have some differences, but we will determine if they are significant in the sections after.
+
+### Bivariate Analysis
+Now, we will go over the bivariate analysis. In this scatter plot we see the the correlation between minutes and calories and whether the recipe is healthy or not.
+
+<iframe src="assets/scatter_cals.html" width=800 height=600 frameBorder=0></iframe>
+
+As you can see from the plot, there are no clear trends within the minutes as both groups are similar. However, you can see that healthier foods have slightly lower amount of calories compared to non-healthy recipes. We see this because the blue points are much higher than the red points.
+
 
 ### Interesting Aggregates
 
@@ -137,6 +144,7 @@ After performing a permutation test, shuffling the `ratings` column 1000 times a
 **P-value:** 0.733
 
 **Histogram:**
+<iframe src="assets/perm_test_H.html" width=800 height=600 frameBorder=0></iframe>
 
 **Conclusion:** Since our P-Value (0.733) >= our significance level(0.05), we fail to reject the null and conclude that there is not enough evidence to suggest a significant difference in the mean 'minutes' between healthy and non-healthy groups based on the permutation test. The observed difference in means may be attributed to random sampling variability, and the results should be interpreted with caution.
 
@@ -159,3 +167,6 @@ Let's take a look at our data, which contains both recipes as well as reviews.
 <iframe src="assets/recipe-length-missingness-1.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/recipe-length-missingness-2.html" width=800 height=600 frameBorder=0></iframe>
 <iframe src="assets/recipe-length-missingness-3.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/scatter_cals.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/recipe-length-missingness-3.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/perm_test_H.html" width=800 height=600 frameBorder=0></iframe>
