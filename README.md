@@ -6,6 +6,10 @@ In a world with constant scientific developments, we are learning more and more 
 
 This page explores a dataset obtained from food.com, presenting the information that supports and addresses the question above. The analysis involves various data science techniques, including data cleaning, exploratory data analysis, assessment of missing data, and hypothesis testing. We will delve into the processes and interpretations derived from the data.
 
+### The Data
+
+Our dataset consists of 2 parts: recipes and reviews. The recipes dataframe contains information on a vast number of recipes, such as the name, recipe id, prepation time, contributor id, submission date, tags, nutrition, steps, description, and ingredients. The reviews dataframe contains interactions between users and recipes, storing information such as user id, recipe id, date of review, rating, and review text. 
+
 # Cleaning and EDA
 
 ### Data Cleaning
