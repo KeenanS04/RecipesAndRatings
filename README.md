@@ -41,13 +41,6 @@ In our analysis, we mainly used data from the `rating`, `minutes`, `tags` and `n
 
 To create our final dataset that will be used for our analysis, we performed multiple operations on our data. 
 
-1. Merged the recipes with the reviews, using the `recipe_id` as our key to merge on.
-2. Replaced each 0 in the `rating` column with `np.nan` to account for missing ratings in reviews.
-3. Created a new column, `avg_rating` that stores the average rating among reviews from each recipe.
-4. Converted `date` column to datetime objects
-5. Converted list-like strings to actual lists (`tags`, `nutrition`, `steps`, `ingredients`)
-6. Drop rows with too much missing data
-
 1. **Converting Object to List**: Our initial step involves addressing the `tags`, `steps`, `nutrition`, and `ingredients` columns in the dataframe. Although these columns appear to be lists, closer inspection reveals that they are not true lists. To fix this, we implement a function to convert these three columns into lists of their respective datatypes.
 
 2. **Converting 'Submitted' Column into Datetime**: The `submitted` column in the dataframe is currently represented as an object. To increase ease-of-use, we convert it into a datetime data type.
