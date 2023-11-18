@@ -74,9 +74,57 @@ This pivot table shows the mean prepartion time and rating for the non-healthy a
 
 # Assessment of Missingness
 
+### NMAR Analysis
+
+In our dataset, we believe that the `review` column is NMAR (Not Missing At Random) due to the opinions of the reviewers of recipes, and this can be explained by a little bit of psychology. People are more likely to write a review when they are upset, as the brain processes negative emotions more than positive ones. When people are happy, they tend to be content and do not usually write many positive reviews. Thus, we can be led to think that the missingness of a value in the `review` column depends on the value itself as a negative review is more likely to get written than a positive review.
+
+### Missingness Dependency
+
+Because there were missing values in the `ratings` column, we decided to run tests to see if the missingness of this column was dependent on other columns.
+
+> Ratings and Minutes
+
+We first started looking at the distributions of recipe length, as indicated by the `minutes` column, based on the missingness of the `ratings` column. Our initial histogram looked like this:
+
+<iframe src="assets/recipe-length-missingness-1.html" width=800 height=600 frameBorder=0></iframe>
+
+Upon closer inspection that excludes outliers, we get this:
+
+<iframe src="assets/recipe-length-missingness-2.html" width=800 height=600 frameBorder=0></iframe>
+
+Now that we have seen the distributions, we perform a permutation test to see if the ratings are missing at random
+**Null hypothesis**: The missingness of `ratings` does not depend on the minutes for each recipe
+**Alternative hypothesis**: The missingness of `ratings` depends on the minutes for each recipe
+We will use the absolute difference in means as our test statistic
+
+<iframe src="assets/recipe-length-missingness-3.html" width=800 height=600 frameBorder=0></iframe>
+
+After performing a permutation test, shuffling the `ratings` column 1000 times and calculating the absolute difference in mean minutes, we get a p value of .118. Because this is greater than .05, we fail to reject the null hypothesis and do not have convincing evidence that the missingness of `ratings` depends on `minutes`.
+
+> Ratings and Calories
+
+We first started looking at the distributions of recipe length, as indicated by the `calories` column, based on the missingness of the `ratings` column. Our initial histogram looked like this:
+
+<iframe src="assets/calories-by-missingness-1.html" width=800 height=600 frameBorder=0></iframe>
+
+Upon closer inspection that excludes outliers, we get this:
+
+<iframe src="assets/calories-by-missingness-2.html" width=800 height=600 frameBorder=0></iframe>
+
+Now that we have seen the distributions, we perform a permutation test to see if the ratings are missing at random
+**Null hypothesis**: The missingness of `ratings` does not depend on the calories in each recipe
+**Alternative hypothesis**: The missingness of `ratings` depends on the calories in each recipe
+We will use the absolute difference in means as our test statistic
+
+<iframe src="assets/calories-by-missingness-3.html" width=800 height=600 frameBorder=0></iframe>
+
+After performing a permutation test, shuffling the `ratings` column 1000 times and calculating the absolute difference in mean minutes, we get a p value of 0.0. Because this is less than .05, we reject the null hypothesis and have convincing evidence that the missingness of `ratings` depends on `calories`.
+
+
+
 # Hypothesis Testing
 
-**Observation:** There is about a 12 minute difference between the prepation times of healthy food and non-healhty food
+**Observation:** There is about a 12 minute difference between the prepation times of healthy food and non-healthy food
 
 **Null Hypothesis (h0):** There is no significant difference in the mean preparation time between recipes with the healthy tag and recipes without the healthy tag.
 
