@@ -8,7 +8,7 @@ This page explores a dataset obtained from food.com, presenting the information 
 
 ### The Data
 
-The first part of our dataset consists of 83782 recipes collected since 2008, containing the following information:\
+The first part of our dataset consists of 83782 recipes collected since 2008, containing the following information:
 
 | Column          | Description                                      |
 |-----------------|--------------------------------------------------|
@@ -22,8 +22,16 @@ The first part of our dataset consists of 83782 recipes collected since 2008, co
 | 'n_steps'       | Number of steps in recipe                        |
 | 'steps'         | Text for recipe steps, in order                  |
 | 'description'   | User-provided description                        |
-\
 
+The second part of our dataset consists of 731927 reviews for the recipes given above. This dataset contains the following information:
+
+| Column     | Description       |
+|------------|-------------------|
+| 'user_id'  | User ID           |
+| 'recipe_id'| Recipe ID         |
+| 'date'     | Date of interaction|
+| 'rating'   | Rating given      |
+| 'review'   | Review text       |
 
 # Cleaning and EDA
 
