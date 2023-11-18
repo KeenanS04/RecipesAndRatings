@@ -48,9 +48,17 @@ To create our final dataset that will be used for our analysis, we performed mul
 ### Univariate Analysis
 <iframe src="assets/healthy-nonhealthy-pie.html" width=800 height=600 frameBorder=0></iframe>
 
+This pie chart shows the distribution of healthy and non healthy recipes in our dataset. As you can see there is much greater percentage of non-healhty recipes over healhty recipes. 
+
 ### Bivariate Analysis
 <iframe src="assets/prep-time-healthy-1.html" width=800 height=600 frameBorder=0></iframe>
+
+This histogram shows the how the preparation time of each healthy and non-healthy recipe stacks up with each other. In this plot you can't see a trend because of the outliers.
+
+Getting rid of outliers, we get this histogram.
 <iframe src="assets/prep-time-healthy-2.html" width=800 height=600 frameBorder=0></iframe>
+
+This histogram clearly shows a similar distribution between the preperation time of healthy and non-healthy foods. From this plot, we can see most of the non-healthy and healthy recipes share similar prep times despite some differences.
 
 ### Interesting Aggregates
 
