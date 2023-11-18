@@ -62,6 +62,16 @@ This histogram clearly shows a similar distribution between the preperation time
 
 ### Interesting Aggregates
 
+The pivot table groups the non-healthy and healthy recipes and finds the mean prep time and rating.
+
+|            | Average Preparation Time | Average Ratings |
+| is_healthy |                          |                 |
+|------------|--------------------------|------------------|
+| False      | 117.060898               | 4.659893         |
+| True       | 104.681646               | 4.620729         |
+
+This pivot table shows the mean prepartion time and rating for the non-healthy and healthy recipes. We can see the similarities of the ratings and the slight difference in the mean preparation time (about 12 mins). 
+
 # Assessment of Missingness
 
 # Hypothesis Testing
