@@ -58,7 +58,7 @@ This histogram shows the how the preparation time of each healthy and non-health
 Getting rid of outliers, we get this histogram.
 <iframe src="assets/prep-time-healthy-2.html" width=800 height=600 frameBorder=0></iframe>
 
-This histogram clearly shows a similar distribution between the preperation time of healthy and non-healthy foods. From this plot, we can see most of the non-healthy and healthy recipes share similar prep times despite some differences.
+This histogram clearly shows a similar distribution between the preperation time of healthy and non-healthy foods. There are also some recipes from both groups that have some differences, but we will determine if they are significant in the sections after.
 
 ### Interesting Aggregates
 
@@ -66,7 +66,7 @@ This histogram clearly shows a similar distribution between the preperation time
 
 # Hypothesis Testing
 
-**Observation:** There is about a 12 minutes difference between the prepation times of healthy food and non-healhty food
+**Observation:** There is about a 12 minute difference between the prepation times of healthy food and non-healhty food
 
 **Null Hypothesis (h0):** There is no significant difference in the mean preparation time between recipes with the healthy tag and recipes without the healthy tag.
 
